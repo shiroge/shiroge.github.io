@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.0/css/bootstrap-slider.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="shortcut icon" type="image/png" href="http://shiroge.github.io/assets/white-tower.png"/>
+        <title>ICrawler · v0.9.1</title>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var box = document.getElementById('dataContainer');
+                console.info(box);
+
+                var exportedData = {
+                    systemSave: localStorage.getItem('systemSave'),
+                    playerSave: localStorage.getItem('playerSave'),
+                    spellsSave: localStorage.getItem('spellsSave'),
+                    upgradesSave: localStorage.getItem('upgradesSave'),
+                    buffsSave: localStorage.getItem('buffsSave'),
+                    monstersSave: localStorage.getItem('monstersSave'),
+                    towerSave: localStorage.getItem('towerSave'),
+                    inventorySave: localStorage.getItem('inventorySave')
+                };
+
+                box.value = JSON.stringify(exportedData);
+            });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-76169051-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <div class="container-fluid">
+            <div class="row" style="height: 10px;"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="text-center" style="font-family: 'Germania One', cursive;"><span class="h1">ICrawler</span> <span class="h4 text-muted">alpha ver0.9.1</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>This project has moved. The new URL is <a href="http://icrawlerrpg.github.io">http://icrawlerrpg.github.io</a>!</p>
+                    <hr>
+                    <p class="text-muted">Your current game data is below. You can copy + paste this data into the import box at the new URL to load your saved data.</p>
+                    <textarea rows="10" class="form-control" id="dataContainer"></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
